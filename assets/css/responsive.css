@@ -1,0 +1,26 @@
+@media(max-width:992px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hero-content h1{
+        font-size:50px;
+    }
+
+    .features-section{
+        grid-template-columns:1fr;
+    }
+
+    .auth-left{
+        display:none;
+    }
+
+    .auth-right{
+        width:100%;
+    }
+}
