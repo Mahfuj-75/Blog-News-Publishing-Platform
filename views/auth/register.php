@@ -22,70 +22,66 @@
     <div class="auth-right">
 
         <form class="auth-form"
-        action="../../controllers/AuthController.php"
-        method="POST">
+action="../../controllers/AuthController.php"
+method="POST">
 
-            <h2>Create Account</h2>
+    <h2>Create Account</h2>
 
-            <div class="input-group">
+    <div class="input-group">
 
-                <input type="text"
-                name="name"
-                placeholder="Full Name"
-                required>
+        <input type="text"
+        name="name"
+        placeholder="Full Name"
+        required>
 
-            </div>
+    </div>
 
-            <div class="input-group">
+    <div class="input-group">
 
-                <input type="text"
-                name="username"
-                placeholder="Username"
-                required>
+        <input type="text"
+        name="username"
+        placeholder="Username"
+        required>
 
-            </div>
+    </div>
 
-            <div class="input-group">
+    <div class="input-group">
 
-                <input type="email"
-                name="email"
-                placeholder="Email"
-                required>
+        <input type="email"
+        name="email"
+        placeholder="Email"
+        required>
 
-            </div>
+    </div>
 
-           <div class="input-group password-group">
+    <div class="input-group">
 
-    <input type="password"
-    name="password"
-    id="registerPassword"
-    placeholder="Password"
-    required>
+        <input type="password"
+        name="password"
+        placeholder="Password"
+        required>
 
-    <i class="fa-solid fa-eye toggle-password"
-    id="registerEye"></i>
+    </div>
 
-</div>
+    <button type="submit"
+    name="register_btn"
+    class="auth-btn">
 
-            <button type="submit"
-            name="register_btn"
-            class="auth-btn">
+        Register
 
-                Register
+    </button>
 
-            </button>
+    <p class="bottom-text">
 
-            <p class="bottom-text">
+        Already have an account?
 
-                Already have an account?
+        <a href="login.php">
+            Login
+        </a>
 
-                <a href="login.php">
-                    Login
-                </a>
+    </p>
 
-            </p>
-
-        </form>
+</form>
 
     </div>
 

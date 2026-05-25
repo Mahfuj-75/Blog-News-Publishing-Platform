@@ -21,55 +21,48 @@
     <div class="auth-right">
 
         <form class="auth-form"
-        action="../../controllers/AuthController.php"
-        method="POST">
+action="../../controllers/AuthController.php"
+method="POST">
 
-            <h2>Login</h2>
+    <h2>Login</h2>
 
-            <div class="input-group">
+    <div class="input-group">
 
-                <input type="email"
-                name="email"
-                placeholder="Enter Email"
-                required>
+        <input type="email"
+        name="email"
+        placeholder="Enter Email"
+        required>
 
-            </div>
+    </div>
 
-            <div class="input-group password-group">
+    <div class="input-group">
 
-    <input type="password"
-    id="password"
-    name="password"
-    placeholder="Enter Password"
-    required>
+        <input type="password"
+        name="password"
+        placeholder="Enter Password"
+        required>
 
-    <span class="toggle-password">
+    </div>
 
-        <i class="fa-solid fa-eye"></i>
+    <button type="submit"
+    name="login_btn"
+    class="auth-btn">
 
-    </span>
+        Login
 
-</div>
+    </button>
 
-            <button type="submit"
-            name="login_btn"
-            class="auth-btn">
+    <p class="bottom-text">
 
-                Login
+        Don't have an account?
 
-            </button>
+        <a href="register.php">
+            Register
+        </a>
 
-            <p class="bottom-text">
+    </p>
 
-                Don't have an account?
-
-                <a href="register.php">
-                    Register
-                </a>
-
-            </p>
-
-        </form>
+</form>
 
     </div>
 

@@ -29,7 +29,13 @@ class User{
         );
 
         $query = "INSERT INTO users
-        (name, username, email, password_hash)
+        (
+            name,
+            username,
+            email,
+            password_hash
+        )
+
         VALUES (?, ?, ?, ?)";
 
         $stmt = mysqli_prepare(
@@ -49,6 +55,8 @@ class User{
         return mysqli_stmt_execute($stmt);
 
     }
+
+
 
     // LOGIN USER
 
@@ -79,10 +87,12 @@ class User{
 
             $user = mysqli_fetch_assoc($result);
 
-            if(password_verify(
-                $password,
-                $user['password_hash']
-            )){
+            if(
+                password_verify(
+                    $password,
+                    $user['password_hash']
+                )
+            ){
 
                 return $user;
 

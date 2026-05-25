@@ -4,6 +4,8 @@ session_start();
 
 session_destroy();
 
-header("Location: views/auth/login.php");
+header(
+"Location: views/auth/login.php"
+);
 
 ?>

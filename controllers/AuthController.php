@@ -7,14 +7,19 @@ include_once '../models/User.php';
 $user = new User();
 
 
+
 // REGISTER
 
 if(isset($_POST['register_btn'])){
 
     $name = trim($_POST['name']);
+
     $username = trim($_POST['username']);
+
     $email = trim($_POST['email']);
+
     $password = trim($_POST['password']);
+
 
     if(
         empty($name) ||
@@ -27,6 +32,7 @@ if(isset($_POST['register_btn'])){
 
     }
 
+
     $register = $user->register(
         $name,
         $username,
@@ -34,9 +40,12 @@ if(isset($_POST['register_btn'])){
         $password
     );
 
+
     if($register){
 
-        header("Location: ../views/auth/login.php");
+        header(
+        "Location: ../views/auth/login.php"
+        );
 
     }else{
 
@@ -48,17 +57,21 @@ if(isset($_POST['register_btn'])){
 
 
 
+
 // LOGIN
 
 if(isset($_POST['login_btn'])){
 
     $email = trim($_POST['email']);
+
     $password = trim($_POST['password']);
+
 
     $loggedInUser = $user->login(
         $email,
         $password
     );
+
 
     if($loggedInUser){
 
@@ -71,9 +84,54 @@ if(isset($_POST['login_btn'])){
         $_SESSION['user_role'] =
         $loggedInUser['role'];
 
-        header("Location: ../index.php");
 
-    }else{
+
+        // ROLE BASED LOGIN
+
+        if(
+            $loggedInUser['role']
+            == 'author'
+        ){
+
+            header(
+            "Location: ../views/author/dashboard.php"
+            );
+
+        }
+
+        elseif(
+            $loggedInUser['role']
+            == 'editor'
+        ){
+
+            header(
+            "Location: ../views/editor/dashboard.php"
+            );
+
+        }
+
+        elseif(
+            $loggedInUser['role']
+            == 'admin'
+        ){
+
+            header(
+            "Location: ../views/admin/dashboard.php"
+            );
+
+        }
+
+        else{
+
+            header(
+            "Location: ../views/reader/dashboard.php"
+            );
+
+        }
+
+    }
+
+    else{
 
         echo "Invalid Email or Password";
 
