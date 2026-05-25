@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <nav class="navbar">
 
     <div class="logo">
@@ -18,18 +20,40 @@
 
     <div class="nav-buttons">
 
-        <button class="search-btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+<?php if(isset($_SESSION['user_id'])){ ?>
 
-        <a href="views/auth/login.php" class="login-btn">
-            Login
-        </a>
+    <span>
 
-        <a href="views/auth/register.php" class="register-btn">
-            Register
-        </a>
+        Hello,
+        <?php echo $_SESSION['user_name']; ?>
 
-    </div>
+    </span>
+
+    <a href="logout.php"
+    class="register-btn">
+
+        Logout
+
+    </a>
+
+<?php }else{ ?>
+
+    <a href="views/auth/login.php"
+    class="login-btn">
+
+        Login
+
+    </a>
+
+    <a href="views/auth/register.php"
+    class="register-btn">
+
+        Register
+
+    </a>
+
+<?php } ?>
+
+</div>
 
 </nav>
