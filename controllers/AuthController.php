@@ -58,6 +58,7 @@ if(isset($_POST['register_btn'])){
 
 
 
+
 // LOGIN
 
 if(isset($_POST['login_btn'])){
@@ -86,7 +87,7 @@ if(isset($_POST['login_btn'])){
 
 
 
-        // ROLE BASED LOGIN
+        // AUTHOR LOGIN
 
         if(
             $loggedInUser['role']
@@ -99,6 +100,10 @@ if(isset($_POST['login_btn'])){
 
         }
 
+
+
+        // EDITOR LOGIN
+
         elseif(
             $loggedInUser['role']
             == 'editor'
@@ -109,6 +114,10 @@ if(isset($_POST['login_btn'])){
             );
 
         }
+
+
+
+        // ADMIN LOGIN
 
         elseif(
             $loggedInUser['role']
@@ -121,10 +130,14 @@ if(isset($_POST['login_btn'])){
 
         }
 
+
+
+        // READER LOGIN
+
         else{
 
             header(
-            "Location: ../views/reader/dashboard.php"
+            "Location: ../index.php"
             );
 
         }
@@ -138,3 +151,4 @@ if(isset($_POST['login_btn'])){
     }
 
 }
+?>
